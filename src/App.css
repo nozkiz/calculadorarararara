@@ -1,0 +1,212 @@
+/* Contenedor principal de la calculadora */
+.calculator-container {
+  background: linear-gradient(145deg, #e6e9ef, #ffffff);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 
+    20px 20px 60px #d1d4d9,
+    -20px -20px 60px #ffffff;
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+/* Display de la calculadora */
+.calculator-display {
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.display-current {
+  color: #a0a0a0;
+  text-align: right;
+  font-size: 1.2rem;
+  min-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.display-result {
+  color: #ffffff;
+  text-align: right;
+  font-size: 2.5rem;
+  font-weight: 700;
+  word-break: break-all;
+}
+
+/* Grid de botones */
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* Estilos base para botones */
+.calculator-btn {
+  border: none;
+  padding: 1.2rem;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto hover para todos los botones */
+.calculator-btn:hover {
+  transform: translateY(-2px);
+}
+
+.calculator-btn:active {
+  transform: translateY(1px);
+}
+
+/* Botones numéricos */
+.btn-number {
+  background: linear-gradient(145deg, #f0f0f0, #e6e6e6);
+  color: #333;
+  box-shadow: 5px 5px 10px #d1d1d1,
+              -5px -5px 10px #ffffff;
+}
+
+.btn-number:hover {
+  background: linear-gradient(145deg, #e6e6e6, #f0f0f0);
+}
+
+/* Botones de operación */
+.btn-operator {
+  background: linear-gradient(145deg, #4a4a4a, #3d3d3d);
+  color: #ffffff;
+  box-shadow: 5px 5px 10px #363636,
+              -5px -5px 10px #4a4a4a;
+}
+
+.btn-operator:hover {
+  background: linear-gradient(145deg, #3d3d3d, #4a4a4a);
+}
+
+/* Botón igual */
+.btn-equals {
+  background: linear-gradient(145deg, #3498db, #2980b9);
+  color: white;
+  box-shadow: 5px 5px 10px #2472a4,
+              -5px -5px 10px #3aa6e8;
+}
+
+.btn-equals:hover {
+  background: linear-gradient(145deg, #2980b9, #3498db);
+}
+
+/* Botón clear */
+.btn-clear {
+  background: linear-gradient(145deg, #e74c3c, #c0392b);
+  color: white;
+  box-shadow: 5px 5px 10px #b03428,
+              -5px -5px 10px #f65b4a;
+}
+
+.btn-clear:hover {
+  background: linear-gradient(145deg, #c0392b, #e74c3c);
+}
+
+/* Historial */
+.history-container {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #eee;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.history-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.history-clear-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #f0f0f0;
+  color: #666;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.history-clear-btn:hover {
+  background: #e6e6e6;
+  color: #333;
+}
+
+.history-list {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.history-item {
+  background: #f8f9fa;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.history-operation {
+  color: #666;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.history-result {
+  color: #333;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+/* Animaciones */
+@keyframes press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.calculator-btn:active {
+  animation: press 0.2s ease-in-out;
+}
+
+/* Scrollbar personalizado para el historial */
+.history-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.history-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
